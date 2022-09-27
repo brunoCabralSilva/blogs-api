@@ -7,14 +7,15 @@ const authController = async (req, res) => {
 
   if (email === '' || password === '') {
     return res.status(400).json({
-      message: "Some required fields are missing",
+      message: 'Some required fields are missing',
     });
-  } else if (authentication === null) {
-    return res.status(400).json({ message: "Invalid fields" });  
+  } 
+  
+  if (authentication === null) {
+    return res.status(400).json({ message: 'Invalid fields' });  
   }
 
   const token = generateToken(authentication);
-  console.log(authentication.User);
   return res.status(200).json({ token });
 };
 
