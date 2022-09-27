@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/login', login);
-app.use('/user', authentication, user);
+app.use('/user', user);
 app.use('/categories', authentication, categories);
 
 // ...
