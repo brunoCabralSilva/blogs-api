@@ -12,7 +12,7 @@ const UserSchema = (sequelize, DataTypes) => {
   {
     tableName: 'users',
     underscored: true,
-    timeStamps: false,
+    timestamps: false,
   });
 
   return UsersTable;
