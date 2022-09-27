@@ -1,4 +1,4 @@
-const displayName = (req, res, next) => {
+const VdisplayName = (req, res, next) => {
   const { displayName } = req.body;
   const number = 8;
   if (displayName.length < number) {
@@ -9,21 +9,21 @@ const displayName = (req, res, next) => {
   next();
 };
 
-const email = (req, res, next) => {
+const Vemail = (req, res, next) => {
   const { email } = req.body;
   const validateEmail = /\S+@\S+\.\S+/;
   if (!validateEmail.test(email)) {
     return res.status(400).json({
-      message: '\"email\" must be a valid email',
+      message: '"email" must be a valid email',
     });
   }
   next();
 };
 
-const password = (req, res, next) => {
+const Vpassword = (req, res, next) => {
   const { password } = req.body;
   const number = 6;
-  if(password.length < number) {
+  if (password.length < number) {
     return res.status(400).json({
       message: '"password" length must be at least 6 characters long',
     });
@@ -31,4 +31,4 @@ const password = (req, res, next) => {
   next();
 };
 
-module.exports = { displayName, email, password };
+module.exports = { VdisplayName, Vemail, Vpassword };

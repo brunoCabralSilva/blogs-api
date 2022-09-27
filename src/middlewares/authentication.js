@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 const auth = require('../utils/authentication');
 
 const authentication = async (req, res, next) => {
@@ -7,9 +6,9 @@ const authentication = async (req, res, next) => {
   }
   const validate = auth.authentication(req.headers.authorization);
 
-  if (validate === "jwt malformed") {
+  if (!validate) {
     return res.status(401).json({ message: 'Expired or invalid token' });
-  };
+  }
   next();
 };
 

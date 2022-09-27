@@ -6,11 +6,10 @@ const authentication = require('../middlewares/authentication');
 const router = express.Router();
 
 router.post('/',
-  mid.displayName,
-  mid.email,
-  mid.password,
-  userController.register
-);
+  mid.VdisplayName,
+  mid.Vemail,
+  mid.Vpassword,
+  userController.register);
 
 router.get('/', authentication, userController.getAllUsers);
 
