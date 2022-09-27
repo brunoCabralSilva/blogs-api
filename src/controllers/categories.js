@@ -6,4 +6,9 @@ const register = async (req, res) => {
   return res.status(201).json(add);
 };
 
-module.exports = { register };
+const getAllCategories = async (req, res) => {
+  const list = await categoriesService.getAllCategories();
+  return res.status(200).json(list);
+};
+
+module.exports = { register, getAllCategories };

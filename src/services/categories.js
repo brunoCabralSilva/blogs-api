@@ -7,4 +7,9 @@ const register = async (name) => {
   return add.dataValues;
 }
 
-module.exports = { register };
+const getAllCategories = async () => {
+  const query = await Category.findAll();
+  return query;
+}
+
+module.exports = { register, getAllCategories };
