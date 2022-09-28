@@ -37,7 +37,7 @@ const getUserById = async (params) => {
 
 const deleteUser = async (id) => {
   const del = await User.destroy({
-    where: { id }
+    where: { id },
   });
   return del;
 };
