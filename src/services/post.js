@@ -94,4 +94,25 @@ const deletePost = async (idPost, idUser) => {
   });
 };
 
-module.exports = { getAll, getById, register, deletePost };
+const updatePost = async ({ title, content }, idPost, id) => {
+  const query = await BlogPost.findByPk(idPost);
+  if (query.dataValues.id !== id) {
+    return 'Unauthorized user';
+  }
+
+  await BlogPost.update(
+    { title, content },
+    { where: { id: idPost } },
+  );
+
+  const post = await getById(idPost);
+  return post;
+};
+
+module.exports = {
+  getAll,
+  getById,
+  register,
+  deletePost,
+  updatePost,
+};

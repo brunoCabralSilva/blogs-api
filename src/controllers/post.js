@@ -36,4 +36,19 @@ const deletePost = async (req, res) => {
   return res.status(204).json({ message: 'Post deleted successfully' }); 
 };
 
-module.exports = { getAll, getById, register, deletePost };
+const updatePost = async (req, res) => {
+  const dec = decode(req.headers.authorization);
+  const updateP = await postService.updatePost(req.body, req.params.id, dec.id);
+  if (updateP === 'Unauthorized user') {
+    return res.status(401).json({ message: 'Unauthorized user' }); 
+  }
+  return res.status(200).json(updateP); 
+};
+
+module.exports = {
+  getAll,
+  getById,
+  register,
+  deletePost,
+  updatePost,
+};

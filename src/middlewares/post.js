@@ -26,4 +26,26 @@ const vCategoryIds = (req, res, next) => {
   next();
 };
 
-module.exports = { vTitle, vContent, vCategoryIds };
+const vTitleUpdt = (req, res, next) => {
+  const { title } = req.body;
+  if (!title || title === '') {
+    return res.status(400).json({ message: 'Some required fields are missing' });
+  }
+  next();
+};
+
+const vContentUpdt = (req, res, next) => {
+  const { content } = req.body;
+  if (!content || content === '') {
+    return res.status(400).json({ message: 'Some required fields are missing' });
+  }
+  next();
+};
+
+module.exports = {
+  vTitle,
+  vContent,
+  vCategoryIds,
+  vTitleUpdt,
+  vContentUpdt,
+};
