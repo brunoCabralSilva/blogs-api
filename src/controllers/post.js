@@ -33,7 +33,7 @@ const deletePost = async (req, res) => {
   if (del === null) {
     return res.status(404).json({ message: 'Post does not exist' }); 
   }
-  return res.status(204).json({ message: 'User deleted successfully' }); 
+  return res.status(204).json({ message: 'Post deleted successfully' }); 
 };
 
 module.exports = { getAll, getById, register, deletePost };

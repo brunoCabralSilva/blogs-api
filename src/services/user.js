@@ -8,16 +8,16 @@ const verifyUser = async (email) => {
   return query;
 };
 
-  const register = async ({ displayName, email, password, image }) => {
-    await User.create(
-      { 
-        displayName,
-        email,
-        password,
-        image,
-      },
-    );
-  };
+const register = async ({ displayName, email, password, image }) => {
+  await User.create(
+    { 
+      displayName,
+      email,
+      password,
+      image,
+    },
+  );
+};
 
 const getAllUsers = async () => {
   const query = await User.findAll({
@@ -35,9 +35,17 @@ const getUserById = async (params) => {
   return query;
 };
 
+const deleteUser = async (id) => {
+  const del = await User.destroy({
+    where: { id }
+  });
+  return del;
+};
+
 module.exports = {
   verifyUser,
   register,
   getAllUsers,
   getUserById,
+  deleteUser,
 };

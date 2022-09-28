@@ -1,5 +1,6 @@
 const userService = require('../services/user');
 const generateToken = require('../utils/generateToken');
+const decode = require('../utils/decode');
 
 const register = async (req, res) => {
   const { email } = req.body;
@@ -29,4 +30,14 @@ const getUserById = async (req, res) => {
   return res.status(200).json(get);
 };
 
-module.exports = { register, getAllUsers, getUserById };
+const deleteUser = async (req, res) => {
+  const dec = decode(req.headers.authorization);
+  const del = await userService.deleteUser(dec.id);
+  if (del) {
+    return res.status(204).json({ message: 'User deleted successfully' });
+  }
+  
+  return res.status(400).json({ message: 'Internal Error' });
+};
+
+module.exports = { register, getAllUsers, getUserById, deleteUser };
