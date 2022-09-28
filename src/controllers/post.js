@@ -16,9 +16,9 @@ const register = async (req, res) => {
   try {
     const reg = await postService.register(req.body, dec.id);
     return res.status(201).json(reg);
-  } catch(error) {
+  } catch (error) {
     return res.status(400).json({ message: '"categoryIds" not found' });
   }
 };
 
-module.exports = { getAll, getById, register }
+module.exports = { getAll, getById, register };

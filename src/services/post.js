@@ -7,11 +7,11 @@ const getAll = async () => {
         attributes: {
           exclude: ['password'],
         },
-        as:'user',
+        as: 'user',
         model: User,
       },
       {
-        as:'category',
+        as: 'category',
         model: Category,
       },
     ],
@@ -29,24 +29,23 @@ const getById = async (params) => {
 
 const register = async (body, id) => {
   const { title, content, categoryIds } = body;
-    const post = await BlogPost.create({
-      title,
-      content,
-      userId: id,
-    });
+    const post = await BlogPost.create({ title, content, userId: id });
     await Promise.all(
       categoryIds.map(async (cat) => {
         const category = await Category.findByPk(cat);
         if (!category) {
-          throw new error ('"categoryIds" not found');
+          throw new Error(
+            '"categoryIds" not found',
+          );
         }
         await PostCategory.create({
-          post_id: post.dataValues.id,   
-          category_id: cat,
+          postId: post.dataValues.id,   
+          categoryId: cat,
         });
         return category;
-      }));
+      }),
+      );
       return post;
 };
 
-module.exports = { getAll, getById, register }
+module.exports = { getAll, getById, register };
