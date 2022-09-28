@@ -13,5 +13,6 @@ router.post('/',
   postControl.register);
 router.get('/', authentication, postControl.getAll);
 router.get('/:id', authentication, postControl.getById);
+router.delete('/:id', authentication, postControl.deletePost);
 
 module.exports = router;

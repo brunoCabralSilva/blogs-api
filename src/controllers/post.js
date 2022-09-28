@@ -24,4 +24,16 @@ const register = async (req, res) => {
   }
 };
 
-module.exports = { getAll, getById, register };
+const deletePost = async (req, res) => {
+  const dec = decode(req.headers.authorization);
+  const del = await postService.deletePost(req.params.id, dec.id);
+  if (del === 'not authorized') {
+    return res.status(401).json({ message: 'Unauthorized user' }); 
+  }
+  if (del === null) {
+    return res.status(404).json({ message: 'Post does not exist' }); 
+  }
+  return res.status(204).json({ message: 'User deleted successfully' }); 
+};
+
+module.exports = { getAll, getById, register, deletePost };

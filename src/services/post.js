@@ -79,4 +79,19 @@ const register = async (body, id) => {
       return post;
 };
 
-module.exports = { getAll, getById, register };
+const deletePost = async (idPost, idUser) => {
+  const query = await BlogPost.findByPk(idPost);
+  if (query === null) {
+    return null;
+  }
+
+  if (query.userId !== idUser) {
+    return 'not authorized';
+  }
+  
+  await BlogPost.destroy({
+    where: { id: idPost },
+  });
+};
+
+module.exports = { getAll, getById, register, deletePost };
