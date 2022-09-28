@@ -8,20 +8,24 @@ const PostCatSchema = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
       },
-    },);
+    },
+    {
+      tableName:'posts_categories',
+      underscored:true,
+      timestamps: false,
+    },
+    );
   
     PostCatTable.associate = (models) => {
       models.BlogPost.belongsToMany(models.Category, {
-        as: 'category_id',
+        as: 'category',
         through: PostCatTable,
-        foreignKey: 'id',
-        otherKey: 'category_id',
+        foreignKey: 'post_id',
       });
       models.Category.belongsToMany(models.BlogPost, {
-        as: 'BlogPost_id',
+        as: 'blog_posts',
         through: PostCatTable,
         foreignKey: 'category_id',
-        otherKey: 'id',
       });
     };
   

@@ -9,7 +9,7 @@ const generateTolkien = ({ id, displayName, email }) => {
   };
 
   const jwtConfig = {
-    expiresIn: '10min',
+    expiresIn: '1000min',
     algorithm: 'HS256',
   };
 
