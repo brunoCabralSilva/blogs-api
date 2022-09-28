@@ -8,6 +8,9 @@ const getAll = async (req, res) => {
 
 const getById = async (req, res) => {
   const get = await postService.getById(req.params.id);
+  if (get === null) {
+    return res.status(404).json({ message: 'Post does not exist' });
+  }
   return res.status(200).json(get);
 };
 

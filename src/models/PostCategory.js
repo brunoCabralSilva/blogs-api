@@ -18,7 +18,7 @@ const PostCatSchema = (sequelize, DataTypes) => {
   
     PostCatTable.associate = (models) => {
       models.BlogPost.belongsToMany(models.Category, {
-        as: 'category',
+        as: 'categories',
         through: PostCatTable,
         foreignKey: 'postId',
       });
