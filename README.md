@@ -1,14 +1,14 @@
 # Boas-vindas ao repositório do projeto API de Blogs!
 
-  Neste projeto foi desenvolvida uma API e um banco de dados para a produção de conteúdo para um blog , por meio de uma aplicação em `Node.js` usando o pacote `sequelize` para fazer um `CRUD` de posts.
+  O blogs-api foi o 26ª projeto feito pela Trybe, onde foi desenvolvida uma API e um banco de dados para a produção de conteúdo para um blog, por meio de uma aplicação em `Node.js` usando o pacote `sequelize` para fazer um `CRUD` de posts.
 
-  1. Foram desenvolvidos endpoints que estão conectados ao banco de dados Mysql seguindo os princípios do REST;
+  - Foram desenvolvidos endpoints que estão conectados ao banco de dados Mysql seguindo os princípios do REST;
 
-  2. Para fazer um post é necessário usuário e login, portanto foi trabalhada a **relação entre** `user` e `post`; 
+  - Para fazer um post é necessário usuário e login, portanto foi trabalhada a **relação entre** `user` e `post`; 
 
-  3. Foi necessária a utilização de categorias para os posts, trabalhando, assim, a **relação de** `posts` para `categories` e de `categories` para `posts`.
+  - Foi necessária a utilização de categorias para os posts, trabalhando, assim, a **relação de** `posts` para `categories` e de `categories` para `posts`.
 
-# Requisitos cumpridos neste projeto
+## Requisitos cumpridos neste projeto
 
 ## 1 - Crie migrations para as tabelas `users`, `categories`, `blog_posts`, `posts_categories`
 
