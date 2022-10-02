@@ -8,18 +8,6 @@
 
   3. Foi necessária a utilização de categorias para os posts, trabalhando, assim, a **relação de** `posts` para `categories` e de `categories` para `posts`.
 
-
-  #### Variável `JWT_SECRET`:
-  
-  Esta variável de ambiente deverá ser utilizada tanto para criar o token quanto para verificá-lo. Os teste locais e o avaliador vão utilizar a variável de ambiente `JWT_SECRET` para testar os requisitos
-
-  **:warning:️ Variáveis de ambiente além das especificadas acima não são suportadas, pois não são esperadas pelo avaliador do projeto.**
-
-<br />
-</details>
-
-
-
 # Requisitos Obrigatórios
 
 ## 1 - Crie migrations para as tabelas `users`, `categories`, `blog_posts`, `posts_categories`
