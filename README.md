@@ -1,4 +1,4 @@
-# Projeto Blogs-API!
+# Projeto Blogs-API
 
   O blogs-api foi o 26ª projeto feito pela Trybe, onde foi desenvolvida uma API e um banco de dados para a produção de conteúdo para um blog, por meio de uma aplicação em `Node.js` usando o pacote `sequelize` para fazer um `CRUD` de posts.
 
