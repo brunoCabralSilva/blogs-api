@@ -689,10 +689,6 @@
 <br />
 </details>
 
----
-
-# Requisitos Bônus
-
 ## 16 - Sua aplicação deve ter o endpoint DELETE `/post/:id`
 
 - ☝ Não esqueça de validar o `token` neste requisito, como descrito na seção de [Validando token nas requisições](#validandoToken);
