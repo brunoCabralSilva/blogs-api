@@ -8,7 +8,7 @@
 
   3. Foi necessária a utilização de categorias para os posts, trabalhando, assim, a **relação de** `posts` para `categories` e de `categories` para `posts`.
 
-# Requisitos Obrigatórios
+# Requisitos cumpridos neste projeto
 
 ## 1 - Crie migrations para as tabelas `users`, `categories`, `blog_posts`, `posts_categories`
 
